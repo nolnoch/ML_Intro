@@ -53,7 +53,7 @@ void genData(string filename) {
 		Scalar x = rand() / Scalar(RAND_MAX);
 		Scalar y = rand() / Scalar(RAND_MAX);
 		file1 << x << "," << y << endl;
-		file2 << 2 * x + 10 + y << endl;
+		file2 << (2 * x) + (10 * y) << endl;
 	}
 	file1.close();
 	file2.close();
@@ -64,7 +64,7 @@ int main(int argc, char** argv)
 {
 	float rate = (argc > 1) ? stof(argv[1]) : 0.01;
 	//cout << "Learning Rate: " << rate << endl;
-	MLI n({ 2, 3, 1 }, rate);
+	MLI n({ 2, 3, 4, 3, 1 }, rate);
 	data in_dat, out_dat;
 
 	genData("test");
